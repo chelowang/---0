@@ -402,18 +402,69 @@
 
     
   <div data-header="light" data-bg="black" class="relative text-white">
-          <div data-background class="absolute inset-0 bg-black"></div>
-    
-    <div class="relative">
-      <div class="pb-16 lg:pb-32">
-  <div class="container" x-reveal>
-    <div style="-webkit-mask-image: radial-gradient(ellipse at center, black 45%, transparent 78%); mask-image: radial-gradient(ellipse at center, black 45%, transparent 78%);">
-      <video class="rounded-3xl w-full" autoplay muted loop playsinline>
-        <source src="media/pages/home/the_black_univere_remix.webm" type="video/webm">
-      </video>
+    <!-- 滚动隧道：提供 150vh 的额外滚动距离，内层 sticky 固定画面 -->
+    <div id="tools-scroll-tunnel" style="height:250vh;position:relative;">
+      <div style="position:sticky;top:0;height:100vh;overflow:hidden;background:#000;display:flex;align-items:center;">
+        <div class="container" style="width:100%;">
+          <div id="tools-video-wrap" style="position:relative;-webkit-mask-image:radial-gradient(ellipse at center,black 45%,transparent 78%);mask-image:radial-gradient(ellipse at center,black 45%,transparent 78%);">
+            <video class="rounded-3xl w-full" autoplay muted loop playsinline>
+              <source src="media/pages/home/the_black_univere_remix.webm" type="video/webm">
+            </video>
+            <!-- Frosted glass capsule labels -->
+            <span class="tool-badge" style="position:absolute;left:6%;top:14%;background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.18);border-radius:9999px;padding:9px 20px;color:rgba(255,255,255,0.9);font-size:13px;white-space:nowrap;pointer-events:none;will-change:transform,opacity;">SAP</span>
+            <span class="tool-badge" style="position:absolute;left:28%;top:5%;background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.18);border-radius:9999px;padding:9px 20px;color:rgba(255,255,255,0.9);font-size:13px;white-space:nowrap;pointer-events:none;will-change:transform,opacity;">Oracle</span>
+            <span class="tool-badge" style="position:absolute;left:52%;top:7%;background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.18);border-radius:9999px;padding:9px 20px;color:rgba(255,255,255,0.9);font-size:13px;white-space:nowrap;pointer-events:none;will-change:transform,opacity;">Salesforce</span>
+            <span class="tool-badge" style="position:absolute;left:76%;top:16%;background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.18);border-radius:9999px;padding:9px 20px;color:rgba(255,255,255,0.9);font-size:13px;white-space:nowrap;pointer-events:none;will-change:transform,opacity;">Microsoft Teams</span>
+            <span class="tool-badge" style="position:absolute;left:84%;top:40%;background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.18);border-radius:9999px;padding:9px 20px;color:rgba(255,255,255,0.9);font-size:13px;white-space:nowrap;pointer-events:none;will-change:transform,opacity;">Workday</span>
+            <span class="tool-badge" style="position:absolute;left:76%;top:66%;background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.18);border-radius:9999px;padding:9px 20px;color:rgba(255,255,255,0.9);font-size:13px;white-space:nowrap;pointer-events:none;will-change:transform,opacity;">ServiceNow</span>
+            <span class="tool-badge" style="position:absolute;left:52%;top:82%;background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.18);border-radius:9999px;padding:9px 20px;color:rgba(255,255,255,0.9);font-size:13px;white-space:nowrap;pointer-events:none;will-change:transform,opacity;">Coupa</span>
+            <span class="tool-badge" style="position:absolute;left:28%;top:80%;background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.18);border-radius:9999px;padding:9px 20px;color:rgba(255,255,255,0.9);font-size:13px;white-space:nowrap;pointer-events:none;will-change:transform,opacity;">Ariba</span>
+            <span class="tool-badge" style="position:absolute;left:5%;top:58%;background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.18);border-radius:9999px;padding:9px 20px;color:rgba(255,255,255,0.9);font-size:13px;white-space:nowrap;pointer-events:none;will-change:transform,opacity;">Slack</span>
+            <span class="tool-badge" style="position:absolute;left:4%;top:36%;background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.18);border-radius:9999px;padding:9px 20px;color:rgba(255,255,255,0.9);font-size:13px;white-space:nowrap;pointer-events:none;will-change:transform,opacity;">Dynamics 365</span>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>    </div>
+    <script>
+    (function () {
+      var tunnel = document.getElementById('tools-scroll-tunnel');
+      var wrap   = document.getElementById('tools-video-wrap');
+      if (!tunnel || !wrap) return;
+      var badges = Array.from(wrap.querySelectorAll('.tool-badge'));
+      var cache  = null;
+
+      function buildCache() {
+        var wr = wrap.getBoundingClientRect();
+        var cx = wr.width  / 2;
+        var cy = wr.height / 2;
+        cache = badges.map(function (b) {
+          var br = b.getBoundingClientRect();
+          return {
+            el: b,
+            dx: cx - (br.left - wr.left + br.width  / 2),
+            dy: cy - (br.top  - wr.top  + br.height / 2)
+          };
+        });
+      }
+
+      function update() {
+        if (!cache) buildCache();
+        var tr   = tunnel.getBoundingClientRect();
+        var dist = tr.height - window.innerHeight; /* 额外滚动距离 = 150vh */
+        /* p=0：画面刚吸附固定；p=1：150vh 滚完，按钮聚拢消失 */
+        var p       = Math.max(0, Math.min(1, -tr.top / dist));
+        var opacity = Math.max(0, 1 - p * 2);
+        cache.forEach(function (item) {
+          item.el.style.transform = 'translate(' + (item.dx * p) + 'px,' + (item.dy * p) + 'px)';
+          item.el.style.opacity   = opacity;
+        });
+      }
+
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', function () { cache = null; update(); });
+      update();
+    })();
+    </script>
   </div>
 
     
