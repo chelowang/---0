@@ -12,7 +12,6 @@
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>nexu Blog &ndash; Lio</title>
-  <link rel="icon" type="image/svg+xml" href="icon/logo-0.svg">
   <link rel="icon" type="image/svg+xml" href="icon/favicon.svg">
   <link href="dist/assets/main-D7DGCbEk.css" rel="stylesheet">
   <script src="dist/assets/main-Lb1jru43.js" type="module"></script>
@@ -20,7 +19,6 @@
 
 <body x-data="{ showMobileNav: false }" class="relative text-white" style="background:#111;" x-cloak>
 
-  <!-- ── Navigation (same as home) ── -->
   <header class="fixed top-0 z-20 w-full text-white" x-data="header" :class="{'lg:bg-white/1': scrolled, 'lg:bg-white/80': scrolled && type === 'dark', 'bg-white/1': scrolled && type === 'light', 'max-lg:bg-white': showMobileNav, 'duration-0': showMobileNav, 'duration-500': !showMobileNav }">
     <div :class="{'backdrop-blur-3xl': scrolled}">
       <div class="container">
@@ -57,7 +55,6 @@
     </div>
   </header>
 
-  <!-- ── Mobile Nav ── -->
   <div id="mobile-nav" class="overflow-y-auto fixed inset-x-0 top-14 z-20 bg-white lg:hidden max-h-[calc(100dvh-3.5rem)]" x-show="showMobileNav" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="translate-y-0" x-transition:leave-end="-translate-y-full" x-cloak>
     <div class="container flex flex-col pt-5 pb-5 min-h-full">
       <nav class="flex-1 space-y-1">
@@ -69,7 +66,6 @@
     </div>
   </div>
 
-  <!-- ── Blog Content ── -->
   <main class="min-h-screen" style="background:#000;padding-top: 96px; padding-bottom: 96px;" x-data="{
     openArticle: null,
     articles: [
@@ -140,11 +136,9 @@
     ],
     get current() { return this.articles.find(a => a.id === this.openArticle) }
   }">
-    <!-- Blog list -->
     <div x-show="!openArticle">
       <div class="container" style="padding-left:4px;padding-right:4px;">
 
-        <!-- Featured article -->
         <article class="group cursor-pointer" style="margin-bottom:48px;" @click="openArticle = 'featured'; window.scrollTo(0,0)">
           <div style="aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#2a1f14 0%,#5c3d1e 50%,#8b6914 100%);margin-bottom:24px;"></div>
           <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:40px;">
@@ -159,7 +153,6 @@
           </div>
         </article>
 
-        <!-- Articles grid -->
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
 
           <article class="group flex flex-col cursor-pointer" @click="openArticle = 'card1'; window.scrollTo(0,0)">
@@ -193,28 +186,21 @@
       </div>
     </div>
 
-    <!-- Article detail view -->
     <div x-show="openArticle" x-cloak>
-      <!-- Article content -->
       <div style="max-width:860px;margin:0 auto;padding:48px 24px 96px;">
-        <!-- Back -->
         <button @click="openArticle = null; window.scrollTo(0,0)" class="t-12 transition-opacity hover:opacity-60" style="color:rgba(255,255,255,0.4);margin-bottom:48px;display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0;">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Back
         </button>
 
-        <!-- Title -->
         <h1 class="t-32 font-medium" style="margin-bottom:16px;" x-text="current ? current.title : ''"></h1>
-        <!-- Date / team below title -->
         <div style="margin-bottom:40px;">
           <span class="t-12" style="color:rgba(255,255,255,0.4);" x-text="current ? current.date : ''"></span>
           <span class="t-12" style="color:rgba(255,255,255,0.4);margin-left:16px;" x-text="current ? current.team : ''"></span>
         </div>
 
-        <!-- Hero image between title and body -->
         <div :style="'aspect-ratio:16/9;width:100%;border-radius:16px;overflow:hidden;margin-bottom:48px;background:' + (current ? current.bg : '')"></div>
 
-        <!-- Body -->
         <div style="display:flex;flex-direction:column;gap:24px;">
           <template x-if="current">
             <template x-for="block in current.sections" :key="block.text">
@@ -224,7 +210,6 @@
           </template>
         </div>
 
-        <!-- Related posts -->
         <div style="margin-top:80px;padding-top:40px;border-top:1px solid rgba(255,255,255,0.1);">
           <div class="t-12" style="color:rgba(255,255,255,0.4);margin-bottom:24px;">MORE FROM NEXU</div>
           <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
