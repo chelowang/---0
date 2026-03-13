@@ -18,7 +18,7 @@
   <script src="dist/assets/main-Lb1jru43.js" type="module"></script>
 </head>
 
-<body x-data="{ showMobileNav: false }" class="relative text-white" style="background:#2D2D2D;" x-cloak>
+<body x-data="{ showMobileNav: false }" class="relative text-white" style="background:#111;" x-cloak>
 
   <!-- ── Navigation (same as home) ── -->
   <header class="fixed top-0 z-20 w-full text-white" x-data="header" :class="{'lg:bg-white/1': scrolled, 'lg:bg-white/80': scrolled && type === 'dark', 'bg-white/1': scrolled && type === 'light', 'max-lg:bg-white': showMobileNav, 'duration-0': showMobileNav, 'duration-500': !showMobileNav }">
@@ -70,41 +70,172 @@
   </div>
 
   <!-- ── Blog Content ── -->
-  <main class="min-h-screen" style="background:#2D2D2D;padding-top: 96px; padding-bottom: 96px;">
-    <div class="container">
+  <main class="min-h-screen" style="background:#000;padding-top: 96px; padding-bottom: 96px;" x-data="{
+    openArticle: null,
+    articles: [
+      {
+        id: 'featured',
+        title: 'Introducing nexu: The AI Procurement Workforce That Never Sleeps',
+        date: &quot;MAR 13 '26&quot;,
+        team: 'PRODUCT TEAM',
+        bg: 'linear-gradient(135deg,#2a1f14 0%,#5c3d1e 50%,#8b6914 100%)',
+        sections: [
+          { type: 'p', text: 'Enterprise procurement has long been a domain paralyzed by complexity — thousands of line items, dozens of approval layers, and a constant struggle to capture savings at scale. Today, we\'re changing that.' },
+          { type: 'h2', text: 'A New Kind of Workforce' },
+          { type: 'p', text: 'nexu isn\'t a single AI assistant. It\'s a coordinated workforce of specialized agents, each owning a distinct slice of the procurement lifecycle. From the moment a purchase request lands, agents spring into action in parallel — researching vendors, benchmarking prices, drafting terms, and routing approvals without any human bottleneck.' },
+          { type: 'p', text: 'Think of it like hiring an entire procurement department overnight, except this team never sleeps, never forgets a policy, and gets measurably smarter every cycle.' },
+          { type: 'h2', text: 'How It Works' },
+          { type: 'p', text: 'At the core is our orchestration layer, which breaks every request into parallel work streams. The Vendor Research Agent scans 3,000+ integrated suppliers in real time. The Negotiation Agent applies learned playbooks to drive down costs. The Compliance Agent checks every decision against your policy framework before anything moves forward.' },
+          { type: 'p', text: 'The result: procurement cycle times drop by an average of 80%, and savings capture increases by 3x in the first 90 days.' },
+          { type: 'h2', text: 'Built for Enterprise' },
+          { type: 'p', text: 'We\'ve designed nexu from the ground up for the complexity of global enterprise. Multi-entity support, ERP integrations with SAP and Oracle, and a full audit trail that satisfies even the strictest compliance teams. Every action is explainable, every decision is logged.' }
+        ]
+      },
+      {
+        id: 'card1',
+        title: 'Introducing nexu: The AI Procurement Workforce',
+        date: &quot;MAR '26&quot;,
+        team: 'PRODUCT',
+        bg: 'linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%)',
+        sections: [
+          { type: 'p', text: 'Every enterprise has the same problem: procurement is slow, manual, and expensive. nexu is our answer — a multi-agent system designed to handle every step of the procurement process simultaneously.' },
+          { type: 'h2', text: 'Parallel by Design' },
+          { type: 'p', text: 'Traditional procurement software automates individual tasks sequentially. nexu is different. Our agents work in parallel, collapsing what used to take weeks into hours. Vendor research, negotiation, approval routing, and PO issuance happen concurrently, coordinated by our orchestration engine.' },
+          { type: 'h2', text: 'Early Results' },
+          { type: 'p', text: 'In our first cohort of enterprise deployments, customers saw an average 78% reduction in cycle time and a 3.2x improvement in savings capture. One global manufacturing customer eliminated 14 FTEs worth of manual processing in the first quarter.' }
+        ]
+      },
+      {
+        id: 'card2',
+        title: '3,000+ Tool Integrations: How We Built It',
+        date: &quot;FEB '26&quot;,
+        team: 'ENGINEERING',
+        bg: 'linear-gradient(135deg,#0d0d0d 0%,#1a0533 50%,#2d0a5e 100%)',
+        sections: [
+          { type: 'p', text: 'When we set out to build nexu\'s integration layer, we had a simple goal: connect to every tool a procurement team uses, without requiring months of IT work. Here\'s how we got to 3,000+ integrations.' },
+          { type: 'h2', text: 'One-Click Connect Architecture' },
+          { type: 'p', text: 'Most integration platforms require custom connectors for each tool. We took a different approach: a universal adapter layer that speaks the language of any API, ERP, or data source. Our connector runtime handles authentication, rate limiting, schema normalization, and error recovery automatically.' },
+          { type: 'h2', text: 'Reliability at Scale' },
+          { type: 'p', text: 'With 3,000+ live integrations, reliability isn\'t optional. We run continuous integration health checks across every connector, with automatic failover and self-healing logic. Our SLA for integration uptime is 99.95%, and we\'ve held it.' },
+          { type: 'h2', text: 'What\'s Next' },
+          { type: 'p', text: 'We\'re currently expanding our ERP coverage and adding real-time sync for inventory and contract data. If you\'re running a system we don\'t yet support, reach out — our connector build time is now under two weeks.' }
+        ]
+      },
+      {
+        id: 'card3',
+        title: 'How Benteler Cut Procurement Time by 80%',
+        date: &quot;JAN '26&quot;,
+        team: 'CUSTOMERS',
+        bg: 'linear-gradient(135deg,#001a0d 0%,#003320 50%,#005c38 100%)',
+        sections: [
+          { type: 'p', text: 'Benteler is one of the world\'s largest automotive suppliers, operating across 26 countries with thousands of active suppliers. Their procurement team faced a familiar challenge: too much volume, too little visibility, and a cycle time measured in weeks.' },
+          { type: 'h2', text: 'The Challenge' },
+          { type: 'p', text: 'Before nexu, Benteler\'s procurement team spent over 60% of their time on transactional tasks — chasing approvals, cross-referencing catalogs, and manually entering data into SAP. Strategic work like supplier development and cost-reduction initiatives was perpetually deprioritized.' },
+          { type: 'h2', text: 'The Deployment' },
+          { type: 'p', text: 'We went live with a phased rollout across Benteler\'s indirect spend categories first, then expanded to direct materials. The nexu agent layer connected directly to their existing SAP S/4HANA instance, requiring zero data migration.' },
+          { type: 'h2', text: 'The Outcome' },
+          { type: 'p', text: 'Within 90 days, Benteler\'s average procurement cycle dropped from 18 days to 3.5 days — an 80% reduction. Manual data entry was eliminated entirely for 94% of purchase orders. And for the first time, the procurement team had bandwidth to lead a strategic supplier consolidation initiative that delivered €12M in annual savings.' }
+        ]
+      }
+    ],
+    get current() { return this.articles.find(a => a.id === this.openArticle) }
+  }">
+    <!-- Blog list -->
+    <div x-show="!openArticle">
+      <div class="container" style="padding-left:4px;padding-right:4px;">
 
-      <!-- Header -->
-
-      <!-- Articles grid 1×4 横排 -->
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
-
-        <article class="group flex flex-col rounded-2xl overflow-hidden cursor-pointer" style="">
-          <div style="height:240px;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);"></div>
-          <div class="flex flex-col gap-3" style="padding: 24px 24px;">
-            <div class="t-12" style="color:rgba(255,255,255,0.4);">March 2026 &middot; Product</div>
-            <h2 class="t-20 font-medium group-hover:opacity-70 transition-opacity">Introducing nexu: The AI Procurement Workforce</h2>
-            <p class="t-14" style="color:rgba(255,255,255,0.5);">How we built a multi-agent system that handles every step of enterprise procurement simultaneously.</p>
+        <!-- Featured article -->
+        <article class="group cursor-pointer" style="margin-bottom:48px;" @click="openArticle = 'featured'; window.scrollTo(0,0)">
+          <div style="aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#2a1f14 0%,#5c3d1e 50%,#8b6914 100%);margin-bottom:24px;"></div>
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:40px;">
+            <div style="flex:1;">
+              <h2 class="t-24 font-medium group-hover:opacity-70 transition-opacity" style="margin-bottom:12px;">Introducing nexu: The AI Procurement Workforce That Never Sleeps</h2>
+              <p class="t-14" style="color:rgba(255,255,255,0.5);max-width:480px;">How we built a multi-agent system that handles every step of enterprise procurement simultaneously — researching vendors, negotiating terms, managing approvals, and tracking deliveries.</p>
+            </div>
+            <div style="text-align:right;white-space:nowrap;flex-shrink:0;">
+              <span class="t-12" style="color:rgba(255,255,255,0.4);">MAR 13 '26</span>
+              <span class="t-12" style="color:rgba(255,255,255,0.4);margin-left:16px;">PRODUCT TEAM</span>
+            </div>
           </div>
         </article>
 
-        <article class="group flex flex-col rounded-2xl overflow-hidden cursor-pointer" style="">
-          <div style="height:240px;background:linear-gradient(135deg,#0d0d0d 0%,#1a0533 50%,#2d0a5e 100%);"></div>
-          <div class="flex flex-col gap-3" style="padding: 24px 24px;">
-            <div class="t-12" style="color:rgba(255,255,255,0.4);">February 2026 &middot; Engineering</div>
-            <h2 class="t-20 font-medium group-hover:opacity-70 transition-opacity">3,000+ Tool Integrations: How We Built It</h2>
-            <p class="t-14" style="color:rgba(255,255,255,0.5);">A deep dive into our one-click connect architecture and how we maintain reliability at scale.</p>
-          </div>
-        </article>
+        <!-- Articles grid -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
 
-        <article class="group flex flex-col rounded-2xl overflow-hidden cursor-pointer" style="">
-          <div style="height:240px;background:linear-gradient(135deg,#001a0d 0%,#003320 50%,#005c38 100%);"></div>
-          <div class="flex flex-col gap-3" style="padding: 24px 24px;">
-            <div class="t-12" style="color:rgba(255,255,255,0.4);">January 2026 &middot; Customers</div>
-            <h2 class="t-20 font-medium group-hover:opacity-70 transition-opacity">How Benteler Cut Procurement Time by 80%</h2>
-            <p class="t-14" style="color:rgba(255,255,255,0.5);">A case study on deploying agentic AI across a global manufacturing supply chain.</p>
-          </div>
-        </article>
+          <article class="group flex flex-col cursor-pointer" @click="openArticle = 'card1'; window.scrollTo(0,0)">
+            <div style="aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);"></div>
+            <div class="flex flex-col gap-3" style="padding: 12px 4px;">
+              <div class="t-12" style="color:rgba(255,255,255,0.4);">March 2026 &middot; Product</div>
+              <h2 class="t-20 font-medium group-hover:opacity-70 transition-opacity">Introducing nexu: The AI Procurement Workforce</h2>
+              <p class="t-14" style="color:rgba(255,255,255,0.5);">How we built a multi-agent system that handles every step of enterprise procurement simultaneously.</p>
+            </div>
+          </article>
 
+          <article class="group flex flex-col cursor-pointer" @click="openArticle = 'card2'; window.scrollTo(0,0)">
+            <div style="aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#0d0d0d 0%,#1a0533 50%,#2d0a5e 100%);"></div>
+            <div class="flex flex-col gap-3" style="padding: 12px 4px;">
+              <div class="t-12" style="color:rgba(255,255,255,0.4);">February 2026 &middot; Engineering</div>
+              <h2 class="t-20 font-medium group-hover:opacity-70 transition-opacity">3,000+ Tool Integrations: How We Built It</h2>
+              <p class="t-14" style="color:rgba(255,255,255,0.5);">A deep dive into our one-click connect architecture and how we maintain reliability at scale.</p>
+            </div>
+          </article>
+
+          <article class="group flex flex-col cursor-pointer" @click="openArticle = 'card3'; window.scrollTo(0,0)">
+            <div style="aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#001a0d 0%,#003320 50%,#005c38 100%);"></div>
+            <div class="flex flex-col gap-3" style="padding: 12px 4px;">
+              <div class="t-12" style="color:rgba(255,255,255,0.4);">January 2026 &middot; Customers</div>
+              <h2 class="t-20 font-medium group-hover:opacity-70 transition-opacity">How Benteler Cut Procurement Time by 80%</h2>
+              <p class="t-14" style="color:rgba(255,255,255,0.5);">A case study on deploying agentic AI across a global manufacturing supply chain.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Article detail view -->
+    <div x-show="openArticle" x-cloak>
+      <!-- Article content -->
+      <div style="max-width:860px;margin:0 auto;padding:48px 24px 96px;">
+        <!-- Back -->
+        <button @click="openArticle = null; window.scrollTo(0,0)" class="t-12 transition-opacity hover:opacity-60" style="color:rgba(255,255,255,0.4);margin-bottom:48px;display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;padding:0;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Back
+        </button>
+
+        <!-- Title -->
+        <h1 class="t-32 font-medium" style="margin-bottom:16px;" x-text="current ? current.title : ''"></h1>
+        <!-- Date / team below title -->
+        <div style="margin-bottom:40px;">
+          <span class="t-12" style="color:rgba(255,255,255,0.4);" x-text="current ? current.date : ''"></span>
+          <span class="t-12" style="color:rgba(255,255,255,0.4);margin-left:16px;" x-text="current ? current.team : ''"></span>
+        </div>
+
+        <!-- Hero image between title and body -->
+        <div :style="'aspect-ratio:16/9;width:100%;border-radius:16px;overflow:hidden;margin-bottom:48px;background:' + (current ? current.bg : '')"></div>
+
+        <!-- Body -->
+        <div style="display:flex;flex-direction:column;gap:24px;">
+          <template x-if="current">
+            <template x-for="block in current.sections" :key="block.text">
+              <h2 x-if="block.type === 'h2'" class="t-20 font-medium" style="margin-top:16px;" x-text="block.text"></h2>
+              <p x-if="block.type === 'p'" class="t-16" style="color:rgba(255,255,255,0.65);line-height:1.7;font-weight:300;" x-text="block.text"></p>
+            </template>
+          </template>
+        </div>
+
+        <!-- Related posts -->
+        <div style="margin-top:80px;padding-top:40px;border-top:1px solid rgba(255,255,255,0.1);">
+          <div class="t-12" style="color:rgba(255,255,255,0.4);margin-bottom:24px;">MORE FROM NEXU</div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+            <template x-for="a in articles.filter(a => a.id !== openArticle).slice(0,3)" :key="a.id">
+              <div class="group cursor-pointer" @click="openArticle = a.id; window.scrollTo(0,0)">
+                <div :style="'aspect-ratio:16/9;border-radius:10px;overflow:hidden;margin-bottom:12px;background:' + a.bg"></div>
+                <p class="t-14 font-medium group-hover:opacity-70 transition-opacity" x-text="a.title"></p>
+              </div>
+            </template>
+          </div>
+        </div>
       </div>
     </div>
   </main>
