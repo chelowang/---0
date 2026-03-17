@@ -277,7 +277,7 @@
       <div style="position:sticky;top:0;height:100vh;overflow:hidden;background:#000;display:flex;align-items:center;">
         <div class="container" style="width:100%;">
           <div id="tools-video-wrap" style="position:relative;padding-top:8%;padding-bottom:8%;-webkit-mask-image:radial-gradient(ellipse at center,black 45%,transparent 78%);mask-image:radial-gradient(ellipse at center,black 45%,transparent 78%);">
-            <div style="width:75%;margin:0 auto;">
+            <div style="width:55%;margin:0 auto;">
               <video class="rounded-3xl w-full" autoplay muted loop playsinline>
                 <source src="media/pages/home/video0-1.mp4" type="video/mp4">
               </video>
@@ -657,59 +657,90 @@
     
   <div id="toc-module" data-header="dark" data-bg="white" class="relative text-black" style="opacity:0;transform:translateY(24px);transition:opacity 0.8s ease, transform 0.8s ease;">
 
-    <div class="relative">
-      <div class="container-outer pt-4 lg:pt-8 pb-16 lg:pb-32 bg-white" x-data="toc">
-  <div class="container">
-    <div class="grid-cols-12 gap-4 lg:grid">
-      <div class="relative col-span-2 col-start-1 max-lg:hidden">
+    <div id="features-scroll-tunnel" style="height:600vh;position:relative;">
+      <div style="position:sticky;top:0;height:100vh;overflow:hidden;background:#fff;display:flex;align-items:center;">
+        <div class="container-outer bg-white" style="width:100%;">
+          <div class="container">
+            <div class="grid-cols-12 gap-4 lg:grid">
+              <div class="col-span-10 col-start-3">
+                <div class="grid-cols-2 gap-2 lg:grid mt-22 max-lg:space-y-4" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+
+            <!-- Left: menu + description -->
+            <div class="p-6 lg:p-12 rounded-lg bg-gray-light" style="display:flex;flex-direction:column;">
+              <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:40px;">
+                <button class="features-tab w-full text-left t-20 transition-opacity" data-idx="0" style="opacity:1;">Agent-Augmented Buying</button>
+                <button class="features-tab w-full text-left t-20 transition-opacity" data-idx="1" style="opacity:0.3;">Procurement automated</button>
+                <button class="features-tab w-full text-left t-20 transition-opacity" data-idx="2" style="opacity:0.3;">Tame the Tailspend</button>
+                <button class="features-tab w-full text-left t-20 transition-opacity" data-idx="3" style="opacity:0.3;">Supercharge your Buyers</button>
+                <button class="features-tab w-full text-left t-20 transition-opacity" data-idx="4" style="opacity:0.3;">The Agentic Workforce</button>
               </div>
-
-      <div class="col-span-10 col-start-3 space-y-24 lg:space-y-60" x-ref="content">
-                  <div>
-            <div class="grid-cols-2 gap-2 lg:grid mt-22 max-lg:space-y-4">
-              <div class="col-start-2 row-start-1 p-6 rounded-lg lg:p-12 bg-gray-light">
-                <img alt="" class="aspect-[492/552] size-full object-cover" height="735" loading="lazy" sizes="(min-width: 1024px) 600px, 100vw" src="media/pages/home/5de3630f55-1772655982/frame-1216292632.png" srcset="media/pages/home/5de3630f55-1772655982/frame-1216292632-200x-q95.webp 200w, media/pages/home/5de3630f55-1772655982/frame-1216292632-400x-q95.webp 400w, media/pages/home/5de3630f55-1772655982/frame-1216292632-800x-q95.webp 800w, media/pages/home/5de3630f55-1772655982/frame-1216292632-1200x-q95.webp 1200w, media/pages/home/5de3630f55-1772655982/frame-1216292632-2400x-q95.webp 2400w" width="678">              </div>
-
-              <div class="flex flex-col col-start-1 row-start-1 p-6 rounded-lg lg:p-12 bg-gray-light" x-data="{ openItem: 0 }">
-                <div class="mb-6 space-y-2 lg:mb-10 lg:space-y-6">
-                                      <button @click="openItem = 0" class="w-full text-left transition-opacity hover:opacity-100 t-20" :class="{ 'opacity-30': openItem !== 0 }">
-                      <span>Agent-Augmented Buying</span>
-                    </button>
-                                      <button @click="openItem = 1" class="w-full text-left transition-opacity hover:opacity-100 t-20" :class="{ 'opacity-30': openItem !== 1 }">
-                      <span>Procurement automated</span>
-                    </button>
-                                      <button @click="openItem = 2" class="w-full text-left transition-opacity hover:opacity-100 t-20" :class="{ 'opacity-30': openItem !== 2 }">
-                      <span>Tame the Tailspend</span>
-                    </button>
-                                      <button @click="openItem = 3" class="w-full text-left transition-opacity hover:opacity-100 t-20" :class="{ 'opacity-30': openItem !== 3 }">
-                      <span>Supercharge your Buyers</span>
-                    </button>
-                                      <button @click="openItem = 4" class="w-full text-left transition-opacity hover:opacity-100 t-20" :class="{ 'opacity-30': openItem !== 4 }">
-                      <span>The Agentic Workforce</span>
-                    </button>
-                                  </div>
-
-                <div class="grid grid-cols-1 grid-rows-1 mt-auto lg:items-end t-16 items-end">
-                                      <div class="col-start-1 row-start-1 transition-opacity" :class="{ 'opacity-100 delay-100': openItem === 0, 'opacity-0': openItem !== 0 }">
-                      Lio turns complex buying into an effortless, guided experience. When agents make procurement intuitive, users naturally stay compliant.                    </div>
-                                      <div class="col-start-1 row-start-1 transition-opacity" :class="{ 'opacity-100 delay-100': openItem === 1, 'opacity-0': openItem !== 1 }">
-                      85% reduction in operational workload                    </div>
-                                      <div class="col-start-1 row-start-1 transition-opacity" :class="{ 'opacity-100 delay-100': openItem === 2, 'opacity-0': openItem !== 2 }">
-                      Scale Savings Without Scaling Headcount                    </div>
-                                      <div class="col-start-1 row-start-1 transition-opacity" :class="{ 'opacity-100 delay-100': openItem === 3, 'opacity-0': openItem !== 3 }">
-                      Gain 10x efficiency with Lio Agents                    </div>
-                                      <div class="col-start-1 row-start-1 transition-opacity" :class="{ 'opacity-100 delay-100': openItem === 4, 'opacity-0': openItem !== 4 }">
-                      Manage and scale your personal Agentic Workforce                    </div>
-                                  </div>
-
-                              </div>
+              <div style="margin-top:auto;display:grid;grid-template-columns:1fr;grid-template-rows:1fr;" class="t-16">
+                <div class="features-desc col-start-1 row-start-1 transition-opacity" data-idx="0" style="opacity:1;">Lio turns complex buying into an effortless, guided experience. When agents make procurement intuitive, users naturally stay compliant.</div>
+                <div class="features-desc col-start-1 row-start-1 transition-opacity" data-idx="1" style="opacity:0;">85% reduction in operational workload</div>
+                <div class="features-desc col-start-1 row-start-1 transition-opacity" data-idx="2" style="opacity:0;">Scale Savings Without Scaling Headcount</div>
+                <div class="features-desc col-start-1 row-start-1 transition-opacity" data-idx="3" style="opacity:0;">Gain 10x efficiency with Lio Agents</div>
+                <div class="features-desc col-start-1 row-start-1 transition-opacity" data-idx="4" style="opacity:0;">Manage and scale your personal Agentic Workforce</div>
+              </div>
             </div>
 
-                      </div>
+            <!-- Right: images -->
+            <div class="p-6 lg:p-12 rounded-lg bg-gray-light">
+              <div style="display:grid;grid-template-columns:1fr;grid-template-rows:1fr;">
+                <img class="features-img col-start-1 row-start-1 aspect-[492/552] size-full object-cover transition-opacity" data-idx="0" alt="" style="opacity:1;" src="media/pages/home/5de3630f55-1772655982/frame-1216292632.png">
+                <img class="features-img col-start-1 row-start-1 aspect-[492/552] size-full object-cover transition-opacity" data-idx="1" alt="" style="opacity:0;" src="media/pages/home/5de3630f55-1772655982/frame-1216292632.png">
+                <img class="features-img col-start-1 row-start-1 aspect-[492/552] size-full object-cover transition-opacity" data-idx="2" alt="" style="opacity:0;" src="media/pages/home/5de3630f55-1772655982/frame-1216292632.png">
+                <img class="features-img col-start-1 row-start-1 aspect-[492/552] size-full object-cover transition-opacity" data-idx="3" alt="" style="opacity:0;" src="media/pages/home/5de3630f55-1772655982/frame-1216292632.png">
+                <img class="features-img col-start-1 row-start-1 aspect-[492/552] size-full object-cover transition-opacity" data-idx="4" alt="" style="opacity:0;" src="media/pages/home/5de3630f55-1772655982/frame-1216292632.png">
               </div>
-    </div>
-  </div>
-</div>    </div>
+            </div>
+
+                </div><!-- /two-col-grid -->
+              </div><!-- /col-span-10 -->
+            </div><!-- /grid-cols-12 -->
+          </div><!-- /container -->
+        </div><!-- /container-outer -->
+      </div><!-- /sticky -->
+    </div><!-- /scroll-tunnel -->
+
+    <script>
+    (function () {
+      var tunnel = document.getElementById('features-scroll-tunnel');
+      if (!tunnel) return;
+      var tabs  = Array.from(document.querySelectorAll('.features-tab'));
+      var descs = Array.from(document.querySelectorAll('.features-desc'));
+      var imgs  = Array.from(document.querySelectorAll('.features-img'));
+      var current = 0;
+
+      function setActive(idx) {
+        if (idx === current) return;
+        current = idx;
+        tabs.forEach(function (el) {
+          el.style.opacity = parseInt(el.dataset.idx) === idx ? '1' : '0.3';
+        });
+        descs.forEach(function (el) {
+          el.style.opacity = parseInt(el.dataset.idx) === idx ? '1' : '0';
+        });
+        imgs.forEach(function (el) {
+          el.style.opacity = parseInt(el.dataset.idx) === idx ? '1' : '0';
+        });
+      }
+
+      window.addEventListener('scroll', function () {
+        var rect = tunnel.getBoundingClientRect();
+        var scrollable = tunnel.offsetHeight - window.innerHeight;
+        var progress = Math.max(0, Math.min(1, -rect.top / scrollable));
+        var idx = Math.min(4, Math.floor(progress * 5));
+        setActive(idx);
+      }, { passive: true });
+
+      tabs.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          setActive(parseInt(btn.dataset.idx));
+        });
+      });
+    })();
+    </script>
+
   </div>
 
 
