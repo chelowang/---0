@@ -1,5 +1,5 @@
-<header class="fixed top-0 z-20 w-full text-white pt-6" x-data="header" :class="{'lg:bg-white/1': scrolled, 'lg:bg-white/80': scrolled && type === 'dark', 'bg-white/1': scrolled && type === 'light', 'max-lg:bg-white': showMobileNav, 'duration-0': showMobileNav, 'duration-500': !showMobileNav }">
-  <div :class="{'backdrop-blur-3xl': scrolled}">
+<header class="fixed top-0 z-20 w-full text-white pt-3" x-data="header" :class="{'max-lg:bg-white': showMobileNav, 'duration-0': showMobileNav, 'duration-500': !showMobileNav }">
+  <div class="transition-all duration-500" :style="scrolled ? (type === 'light' ? 'margin-top:12px;margin-left:240px;margin-right:240px;border-radius:200px;background:rgba(255,255,255,0.08);backdrop-filter:blur(20px);padding-left:24px;padding-right:24px;' : 'margin-top:12px;margin-left:240px;margin-right:240px;border-radius:200px;background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);padding-left:24px;padding-right:24px;') : ''">
     <div class="container">
       <div class="flex items-center h-14 rounded-lg transition-all duration-500 lg:px-6 lg:-mx-6">
         <a href="home.html" class="block transition-colors" :class="{ 'text-black': type === 'dark', 'max-lg:text-black': showMobileNav, 'text-white': type === 'light' && !showMobileNav }">
@@ -22,7 +22,7 @@
             </div>
           </div>
 
-          <a class="flex justify-center items-center px-3 font-medium rounded backdrop-blur-xl h-8.5 transition-all" href="javascript:void(0)" style="background:rgba(255,255,255,0.15)" @mouseenter="type === 'light' ? ($el.style.background='#fff', $el.style.color='#2D2D2D') : ($el.style.background='#2D2D2D', $el.style.color='#fff')" @mouseleave="$el.style.background='rgba(255,255,255,0.15)'; $el.style.color=''">
+          <a class="flex justify-center items-center px-4 font-medium rounded-full h-8.5 transition-all text-white" href="javascript:void(0)" style="background:#000000">
             Download Mac client
           </a>
         </nav>
