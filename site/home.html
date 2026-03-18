@@ -38,6 +38,15 @@
       0%   { background-position: 200% center; }
       100% { background-position: -50% center; }
     }
+  .logo-arrow {
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .h2-logo-hover:hover .logo-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
   /* 去掉黑色模块的缩放动画 */
   [data-bg="black"] [data-background] {
     transform: none !important;
@@ -164,8 +173,8 @@
   
   <div class="container flex relative flex-col pt-36 pb-8 min-h-lvh">
     <div class="flex-1 flex flex-col items-center justify-center">
-      <h1 class="t-32 lg:t-80 text-balance max-w-250 mb-6 text-center mx-auto">Get your digital employee for free</h1>
-      <p class="text-center text-white/70 mb-6">The simplest OpenClaw for teams deploy in 1 min. Zero data loss.</p>
+      <h1 class="t-32 lg:t-80 text-balance max-w-250 mb-6 text-center mx-auto">面向一人公司的龙虾"合伙人"</h1>
+      <p class="text-center text-white/70 mb-6">OpenClaw 帮你执行，Nexu 和你一起构建商业闭环。</p>
       <div class="flex gap-2 justify-center">
         <a class="btn btn-primary" href="javascript:void(0)" target="">Get started free</a>
         <a class="btn btn-primary flex items-center gap-2" href="javascript:void(0)" target="_blank">
@@ -185,12 +194,9 @@
       <div class="pt-16 lg:pt-32">
   <div class="container">
     <div class="grid grid-cols-2 gap-x-4 py-4 lg:grid-cols-12">
-              <div class="col-start-1 row-start-1 py-2 lg:col-span-2 lg:col-start-1 tm-12">
-          核心卖点</div>
-      
               <div class="col-start-1 row-start-2 lg:row-start-1 col-span-2 lg:col-span-8 lg:col-start-3 text-left flex justify-start">
           <div>
-            <h2 class="text-balance t-20 lg:t-32">由开源人工智能代理框架 OpenClaw 提供支持</h2>                      </div>
+            <h2 class="text-balance t-20 lg:t-32">nexu一个会思考、可决策、能执行的合伙人团队</h2>                      </div>
         </div>
       
           </div>
@@ -202,7 +208,7 @@
   <div data-header="dark" data-bg="white" class="relative text-black">
     
     <div class="relative">
-      <div class="container-outer pt-8 lg:pt-16 pb-16 lg:pb-32 bg-white">
+      <div class="container-outer pt-4 lg:pt-8 pb-16 lg:pb-32 bg-white">
   <div class="container">
     <div class="grid-cols-12 gap-4 lg:grid">
       <div class="col-span-10 col-start-3">
@@ -210,9 +216,9 @@
                     <div class="col-span-1 row-span-2 row-start-1 p-6 rounded-lg lg:p-12 bg-gray-light">
             <img alt="" class="w-full object-cover aspect-square" height="914" loading="lazy" sizes="(min-width: 1024px) 600px, 100vw" src="media/pages/home/d8a080417b-1772639654/multi-agent-system.jpg" srcset="media/pages/home/d8a080417b-1772639654/multi-agent-system-200x-q95.webp 200w, media/pages/home/d8a080417b-1772639654/multi-agent-system-400x-q95.webp 400w, media/pages/home/d8a080417b-1772639654/multi-agent-system-800x-q95.webp 800w, media/pages/home/d8a080417b-1772639654/multi-agent-system-1200x-q95.webp 1200w, media/pages/home/d8a080417b-1772639654/multi-agent-system-2400x-q95.webp 2400w" width="978">
             <div class="mt-10 t-16 max-w-100">
-              <strong>Get Your OpenClaw in 3 Quick Steps</strong>            </div>
+              <strong>一键下载，零技术门槛。</strong>            </div>
             <div class="mt-4 t-16 whitespace-nowrap">
-              Add Nexu to your team chat and start working together in minutes.            </div>
+              不需要命令行、不需要配环境，桌面端秒开即用。            </div>
           </div>
 
                     <div class="flex col-span-1 col-start-2 row-start-1 gap-8 p-6 rounded-lg lg:p-12 bg-gray-light">
@@ -221,16 +227,16 @@
 
             <div class="self-end basis-6/10">
               <blockquote class="t-16">
-                <strong>Data Security</strong>              </blockquote>
+                <strong>自带专业技能的 AI 合伙人团队</strong>              </blockquote>
 
               <div class="mt-6 tm-12 text-black/60">
-                Nexu remembers your conversations, preferences, and context. The more you use it, the sharper it gets.              </div>
+                CEO 思维主动决策，CTO 能力搞定技术方案，CMO 视角驱动增长策略。              </div>
             </div>
           </div>
 
                     <div class="flex flex-col col-span-1 col-start-2 row-start-2 pb-6 rounded-lg lg:pb-12 bg-gray-light">
             <div class="p-6 lg:p-12 t-16">
-              <strong>Built-in all office tools and skills</strong>            </div>
+              <strong>24/7 主动监控，自动发现机会</strong>            </div>
 
             <div class="overflow-clip mask-x-from-90% mask-x-to-100% my-auto">
               <div class="flex select-none">
@@ -258,13 +264,10 @@
       <div class="pt-1 lg:pt-2 pb-0 lg:pb-1">
   <div class="container">
     <div class="grid grid-cols-2 gap-x-4 py-2 lg:grid-cols-12">
-              <div class="col-start-1 row-start-1 py-2 lg:col-span-2 lg:col-start-1 tm-12">
-          For your Industry        </div>
-      
               <div class="col-start-1 row-start-2 lg:row-start-1 col-span-2 lg:col-span-8 lg:col-start-3 text-left flex justify-start">
           <div>
-            <div class="t-16 mb-2">Comprehensive skills</div>
-            <h2 class="text-balance t-20 lg:t-32">3,000+ TOOLS, ONE-CLICK CONNECT</h2>                      </div>
+            <div class="t-16 mb-2">为你的业务而生的专业技能</div>
+            <h2 class="text-balance t-20 lg:t-32">CEO思维•CTO 能力•CMO视角</h2>                      </div>
         </div>
       
           </div>
@@ -349,19 +352,19 @@
   <div class="container flex flex-col gap-y-8 justify-center items-center text-center t-24 lg:t-32" x-ref="items">
           <div class="flex relative justify-center items-center">
         <div>
-          Complex installation</div>
+          被动执行任务</div>
 
         <div class="absolute w-full h-0.5 origin-left bg-gray-medium" x-data-line></div>
       </div>
           <div class="flex relative justify-center items-center">
         <div>
-          Complex environmental dependencies</div>
+          工具零散，没有商业环</div>
 
         <div class="absolute w-full h-0.5 origin-left bg-gray-medium" x-data-line></div>
       </div>
           <div class="flex relative justify-center items-center">
         <div>
-          Data loss</div>
+          一个人干五个人的工作</div>
 
         <div class="absolute w-full h-0.5 origin-left bg-gray-medium" x-data-line></div>
       </div>
@@ -380,7 +383,7 @@
       
               <div class="col-start-1 row-start-2 lg:row-start-1 col-span-2 lg:col-span-8 lg:col-start-3 text-center flex justify-center">
           <div>
-            <h2 class="text-balance t-20 lg:t-32 inline-flex items-center gap-3">Everything you need is in <svg class="inline-block h-8 w-auto" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M193.435 0C300.266 0 386.869 86.6036 386.869 193.435V345.42C386.869 368.312 368.311 386.87 345.419 386.87H41.4502C18.5579 386.87 0 368.311 0 345.419V193.435C0 86.6036 86.6036 0 193.435 0ZM180.539 206.328V386.867H206.331V206.328H180.539Z" fill="currentColor"/><path d="M606.095 799.53C499.264 799.53 412.661 712.926 412.661 606.095L412.661 454.11C412.661 431.217 431.219 412.659 454.111 412.659L758.08 412.659C780.972 412.659 799.53 431.218 799.53 454.111L799.53 606.095C799.53 712.926 712.926 799.53 606.095 799.53ZM618.991 593.2L618.991 412.661L593.2 412.661L593.2 593.2L618.991 593.2Z" fill="currentColor"/><path d="M799.531 193.447C799.531 193.551 799.53 193.655 799.53 193.759L799.53 193.134C799.53 193.238 799.531 193.343 799.531 193.447ZM412.662 193.447C412.662 86.6158 499.265 0.0122032 606.096 0.0121986C708.589 0.0121941 792.462 79.725 799.105 180.537L618.991 180.537L618.991 206.329L799.107 206.329C792.478 307.154 708.598 386.881 606.096 386.881C499.265 386.881 412.662 300.278 412.662 193.447Z" fill="currentColor"/><path d="M-8.45487e-06 606.105C-1.0587e-05 557.327 18.0554 512.768 47.8447 478.741L148.407 579.303L166.645 561.066L66.082 460.504C100.109 430.715 144.667 412.66 193.444 412.66C240.179 412.66 283.043 429.237 316.478 456.83L212.225 561.084L230.462 579.322L335.244 474.538C367.28 509.055 386.869 555.285 386.869 606.09C386.869 654.866 368.812 699.424 339.022 733.45L227.657 622.084L209.42 640.322L320.784 751.688C286.758 781.475 242.203 799.53 193.43 799.53C142.628 799.53 96.4006 779.944 61.8848 747.913L169.45 640.348L151.213 622.111L44.1758 729.148C16.5783 695.712 1.56674e-05 652.844 -8.45487e-06 606.105Z" fill="currentColor"/></svg></h2>                      </div>
+            <h2 class="text-balance t-20 lg:t-32 inline-flex items-center gap-3 h2-logo-hover cursor-pointer">你的整个合伙人团队，就在 <svg class="inline-block h-8 w-auto" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M193.435 0C300.266 0 386.869 86.6036 386.869 193.435V345.42C386.869 368.312 368.311 386.87 345.419 386.87H41.4502C18.5579 386.87 0 368.311 0 345.419V193.435C0 86.6036 86.6036 0 193.435 0ZM180.539 206.328V386.867H206.331V206.328H180.539Z" fill="currentColor"/><path d="M606.095 799.53C499.264 799.53 412.661 712.926 412.661 606.095L412.661 454.11C412.661 431.217 431.219 412.659 454.111 412.659L758.08 412.659C780.972 412.659 799.53 431.218 799.53 454.111L799.53 606.095C799.53 712.926 712.926 799.53 606.095 799.53ZM618.991 593.2L618.991 412.661L593.2 412.661L593.2 593.2L618.991 593.2Z" fill="currentColor"/><path d="M799.531 193.447C799.531 193.551 799.53 193.655 799.53 193.759L799.53 193.134C799.53 193.238 799.531 193.343 799.531 193.447ZM412.662 193.447C412.662 86.6158 499.265 0.0122032 606.096 0.0121986C708.589 0.0121941 792.462 79.725 799.105 180.537L618.991 180.537L618.991 206.329L799.107 206.329C792.478 307.154 708.598 386.881 606.096 386.881C499.265 386.881 412.662 300.278 412.662 193.447Z" fill="currentColor"/><path d="M-8.45487e-06 606.105C-1.0587e-05 557.327 18.0554 512.768 47.8447 478.741L148.407 579.303L166.645 561.066L66.082 460.504C100.109 430.715 144.667 412.66 193.444 412.66C240.179 412.66 283.043 429.237 316.478 456.83L212.225 561.084L230.462 579.322L335.244 474.538C367.28 509.055 386.869 555.285 386.869 606.09C386.869 654.866 368.812 699.424 339.022 733.45L227.657 622.084L209.42 640.322L320.784 751.688C286.758 781.475 242.203 799.53 193.43 799.53C142.628 799.53 96.4006 779.944 61.8848 747.913L169.45 640.348L151.213 622.111L44.1758 729.148C16.5783 695.712 1.56674e-05 652.844 -8.45487e-06 606.105Z" fill="currentColor"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="logo-arrow inline-block w-auto" style="height:0.6em;vertical-align:middle;"><path d="M1.99974 12.9999L1.9996 11L15.5858 11V5.58582L22 12L15.5858 18.4142V13L1.99974 12.9999Z"></path></svg></h2>                      </div>
         </div>
       
           </div>
@@ -644,10 +647,10 @@
   <div class="container" x-reveal>
     <div class="mx-auto max-w-[58.625rem]">
               <div class="mb-10 tm-12" x-text-reveal:50>
-          The simplest OpenClaw. Built for your team.     </div>
+          OpenClaw 帮你执行，Nexu 和你一起构建商业闭环。</div>
       
               <div id="nexu-text-reveal" class="space-y-8 t-24 lg:t-32" x-text-reveal:50>
-          <p>Born to truly work for you</p>
+          <p>面向一人公司的 AI 合伙人。</p>
         </div>
           </div>
   </div>
@@ -658,7 +661,7 @@
   <div id="toc-module" data-header="dark" data-bg="white" class="relative text-black" style="opacity:0;transform:translateY(24px);transition:opacity 0.8s ease, transform 0.8s ease;">
 
     <div id="features-scroll-tunnel" style="height:600vh;position:relative;">
-      <div style="position:sticky;top:0;height:100vh;overflow:hidden;background:#fff;display:flex;align-items:center;">
+      <div style="position:sticky;top:0;height:100vh;overflow:hidden;background:#fff;display:flex;align-items:flex-start;padding-top:10vh;">
         <div class="container-outer bg-white" style="width:100%;">
           <div class="container">
             <div class="grid-cols-12 gap-4 lg:grid">
@@ -668,11 +671,11 @@
             <!-- Left: menu + description -->
             <div class="p-6 lg:p-12 rounded-lg bg-gray-light" style="display:flex;flex-direction:column;">
               <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:40px;">
-                <button class="features-tab w-full text-left t-20 transition-opacity" data-idx="0" style="opacity:1;">Agent-Augmented Buying</button>
-                <button class="features-tab w-full text-left t-20 transition-opacity" data-idx="1" style="opacity:0.3;">Procurement automated</button>
-                <button class="features-tab w-full text-left t-20 transition-opacity" data-idx="2" style="opacity:0.3;">Tame the Tailspend</button>
-                <button class="features-tab w-full text-left t-20 transition-opacity" data-idx="3" style="opacity:0.3;">Supercharge your Buyers</button>
-                <button class="features-tab w-full text-left t-20 transition-opacity" data-idx="4" style="opacity:0.3;">The Agentic Workforce</button>
+                <button class="features-tab w-full text-left t-20 transition-opacity" data-idx="0" style="opacity:1;display:flex;align-items:center;gap:8px;"><span class="features-dot" data-idx="0" style="width:7px;height:7px;border-radius:50%;background:#000;flex-shrink:0;opacity:1;transition:opacity 0.3s;"></span>开箱即用</button>
+                <button class="features-tab w-full text-left t-20 transition-opacity" data-idx="1" style="opacity:0.3;display:flex;align-items:center;gap:8px;"><span class="features-dot" data-idx="1" style="width:7px;height:7px;border-radius:50%;background:#000;flex-shrink:0;opacity:0;transition:opacity 0.3s;"></span>AI 合伙人团队</button>
+                <button class="features-tab w-full text-left t-20 transition-opacity" data-idx="2" style="opacity:0.3;display:flex;align-items:center;gap:8px;"><span class="features-dot" data-idx="2" style="width:7px;height:7px;border-radius:50%;background:#000;flex-shrink:0;opacity:0;transition:opacity 0.3s;"></span>24/7主动监控</button>
+                <button class="features-tab w-full text-left t-20 transition-opacity" data-idx="3" style="opacity:0.3;display:flex;align-items:center;gap:8px;"><span class="features-dot" data-idx="3" style="width:7px;height:7px;border-radius:50%;background:#000;flex-shrink:0;opacity:0;transition:opacity 0.3s;"></span>安全可靠</button>
+                <button class="features-tab w-full text-left t-20 transition-opacity" data-idx="4" style="opacity:0.3;display:flex;align-items:center;gap:8px;"><span class="features-dot" data-idx="4" style="width:7px;height:7px;border-radius:50%;background:#000;flex-shrink:0;opacity:0;transition:opacity 0.3s;"></span>主动省成本</button>
               </div>
               <div style="margin-top:auto;display:grid;grid-template-columns:1fr;grid-template-rows:1fr;" class="t-16">
                 <div class="features-desc col-start-1 row-start-1 transition-opacity" data-idx="0" style="opacity:1;">Lio turns complex buying into an effortless, guided experience. When agents make procurement intuitive, users naturally stay compliant.</div>
@@ -709,34 +712,43 @@
       var tabs  = Array.from(document.querySelectorAll('.features-tab'));
       var descs = Array.from(document.querySelectorAll('.features-desc'));
       var imgs  = Array.from(document.querySelectorAll('.features-img'));
+      var dots  = Array.from(document.querySelectorAll('.features-dot'));
+      var TOTAL = 5;
       var current = 0;
+      var busy = false;
 
       function setActive(idx) {
-        if (idx === current) return;
         current = idx;
-        tabs.forEach(function (el) {
-          el.style.opacity = parseInt(el.dataset.idx) === idx ? '1' : '0.3';
-        });
-        descs.forEach(function (el) {
-          el.style.opacity = parseInt(el.dataset.idx) === idx ? '1' : '0';
-        });
-        imgs.forEach(function (el) {
-          el.style.opacity = parseInt(el.dataset.idx) === idx ? '1' : '0';
-        });
+        tabs.forEach(function (el)  { el.style.opacity  = parseInt(el.dataset.idx) === idx ? '1' : '0.3'; });
+        descs.forEach(function (el) { el.style.opacity  = parseInt(el.dataset.idx) === idx ? '1' : '0'; });
+        imgs.forEach(function (el)  { el.style.opacity  = parseInt(el.dataset.idx) === idx ? '1' : '0'; });
+        dots.forEach(function (el)  { el.style.opacity  = parseInt(el.dataset.idx) === idx ? '1' : '0'; });
       }
 
-      window.addEventListener('scroll', function () {
-        var rect = tunnel.getBoundingClientRect();
-        var scrollable = tunnel.offsetHeight - window.innerHeight;
-        var progress = Math.max(0, Math.min(1, -rect.top / scrollable));
-        var idx = Math.min(4, Math.floor(progress * 5));
-        setActive(idx);
-      }, { passive: true });
+      function isTunnelSticky() {
+        var r = tunnel.getBoundingClientRect();
+        return r.top <= 0 && r.bottom >= window.innerHeight;
+      }
+
+      function getStep() {
+        return (tunnel.offsetHeight - window.innerHeight) / TOTAL;
+      }
+
+      window.addEventListener('wheel', function (e) {
+        if (!isTunnelSticky()) return;
+        var dir  = e.deltaY > 0 ? 1 : -1;
+        var next = current + dir;
+        if (next < 0 || next >= TOTAL) return; // 边界：放行自然滚动
+        e.preventDefault();
+        if (busy) return;
+        busy = true;
+        window.scrollBy(0, dir * getStep());
+        setActive(next);
+        setTimeout(function () { busy = false; }, 450);
+      }, { passive: false });
 
       tabs.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          setActive(parseInt(btn.dataset.idx));
-        });
+        btn.addEventListener('click', function () { setActive(parseInt(btn.dataset.idx)); });
       });
     })();
     </script>
@@ -751,7 +763,7 @@
   <div class="container">
     <div class="grid grid-cols-1 grid-rows-1 justify-center items-center mx-auto perspective-near" x-ref="cards">
       <div class="col-start-1 row-start-1 text-center">
-        <h2 class="t-16 lg:t-32 flex justify-center" x-ref="title"><div>Proven Impact at&nbsp;</div><div>Enterprise Scale</div></h2>      </div>
+        <h2 class="t-16 lg:t-32 flex items-center justify-center" style="gap:4rem;" x-ref="title"><div style="transform-origin: right center; margin-left: -60px">一个人，一家公司</div><div style="transform-origin: left center">能力无限可能</div></h2>      </div>
 
                     <div class="flex relative flex-col col-start-1 row-start-1 p-10 m-auto text-center rounded-full overflow-clip aspect-square w-70 kpi-card">
           <img alt="" class="object-cover absolute inset-0 size-full" height="640" loading="lazy" sizes="400px" src="media/frame-42.png" width="560">
@@ -789,15 +801,13 @@
       <div class="pt-16 lg:pt-32 pb-16 lg:pb-32 bg-white">
   <div class="container" x-reveal>
     <div class="mx-auto max-w-[58.625rem]">
-              <div class="mb-10 tm-12">
-          Our Promise to you        </div>
-      
               <div class="space-y-8 t-24 lg:t-32" x-text-reveal:50>
-          <p>OpenClaw should be powerful for builders, but simple enough for anyone to start using on day one. That is the product standard we are building toward.</p>
-<p>Too many open-source agent tools ask users to fight installation guides, environment dependencies, and scattered integrations before they feel any real value. We think the first experience should be the opposite: download the client, double-click to install, and start working in minutes.</p>
-<p>That is why Nexu packages OpenClaw into a local Mac app, bundles OpenClaw Skills with full Feishu Skills, and removes the friction between ideas and execution.</p>
-<p>You can begin instantly with Nexu access to top-tier models, or stay fully in control with your own API Key and no login at all.</p>
-<p>Open source should not mean harder to use. It should mean more freedom, more trust, and more leverage for every team.</p>        </div>
+          <p class="tm-12 mb-8 font-black">为什么选择 Nexu</p>
+<p>经营一人公司意味着每天要干五个人的活。我们相信你值得拥有一个永不休息的合伙人。</p>
+<p>大多数 AI 工具止步于任务执行——等待指令，返回结果。当你独自构建事业时，这远远不够。Nexu 不同。它主动监控你的邮件、日程、社交媒体和客户消息，在你开口之前就发现机会并建议行动。</p>
+<p>它不是一个聊天机器人，而是一个合伙人团队——有 CEO 的决策思维，CTO 的产品开发能力，和 CMO 的增长视角。</p>
+<p>从内容创作到客户转化，从社区运营到数据分析——Nexu 构建的是将创意转化为收入的完整商业闭环。</p>
+<p>技术极客用 OpenClaw，创业者用 Nexu。区别不在技术——而在于你是否有一个 24/7 为你的业务思考的合伙人</p>        </div>
           </div>
   </div>
 </div>    </div>
@@ -811,12 +821,11 @@
   <div class="container">
     <div class="grid grid-cols-2 gap-x-4 py-4 lg:grid-cols-12">
               <div class="col-start-1 row-start-1 py-2 lg:col-span-2 lg:col-start-1 tm-12">
-          Proven. Recognized. Adopted.        </div>
-      
+          为真实商业而生        </div>
+
               <div class="col-start-1 row-start-2 lg:row-start-1 col-span-2 lg:col-span-8 lg:col-start-3 text-left flex justify-start">
           <div>
-            <h2 class="text-balance t-20 lg:t-32">The most awarded and adopted multi-agent<br />
-procurement system worldwide</h2>                      </div>
+            <h2 class="text-balance t-20 lg:t-32">从内容到收入，全自动闭环</h2>                      </div>
         </div>
       
           </div>
@@ -837,18 +846,18 @@ procurement system worldwide</h2>                      </div>
                                   <div class="col-span-3 row-span-2 p-6 rounded-lg lg:p-12 bg-gray-light">
               <img alt="" class="w-full object-cover aspect-square" height="898" loading="lazy" sizes="(min-width: 1024px) 600px, 100vw" src="media/pages/home/b08578e26e-1772639644/dpw-award.jpg" srcset="media/pages/home/b08578e26e-1772639644/dpw-award-200x-q95.webp 200w, media/pages/home/b08578e26e-1772639644/dpw-award-400x-q95.webp 400w, media/pages/home/b08578e26e-1772639644/dpw-award-800x-q95.webp 800w, media/pages/home/b08578e26e-1772639644/dpw-award-1200x-q95.webp 1200w, media/pages/home/b08578e26e-1772639644/dpw-award-2400x-q95.webp 2400w" width="978">
               <div class="mt-12 t-16">
-                Over 150 procurement solutions applied – and we prevailed against competitors twice our age. A jury of 80+ international CPOs from leading enterprises selected Lio as the winner for DPW Growth Award.              </div>
+                自媒体创作者：自动选题、辅助写作、一键多平台发布、监控互动数据、将粉丝转化为付费客户——全程自动化。</div>
             </div>
           
                                   <div class="flex flex-col col-span-3 p-6 rounded-lg lg:p-12 bg-gray-light">
               <img alt="" class="object-contain w-20 h-10 ml-auto mb-6" height="210" loading="lazy" sizes="(min-width: 1024px) 600px, 100vw" src="media/pages/home/d0ead2bafb-1772639645/bme-logo.9707614d.svg" srcset="media/pages/home/d0ead2bafb-1772639645/bme-logo.9707614d.svg 200w, media/pages/home/d0ead2bafb-1772639645/bme-logo.9707614d.svg 400w, media/pages/home/d0ead2bafb-1772639645/bme-logo.9707614d.svg 800w, media/pages/home/d0ead2bafb-1772639645/bme-logo.9707614d.svg 1200w, media/pages/home/d0ead2bafb-1772639645/bme-logo.9707614d.svg 2400w" width="702">
               <div class="mt-auto t-20">
-                Awarded the BME Procurement Excellence Award with REHAU — recognizing our innovation and the trust our customers place in us.              </div>
+                独立开发者：24/7 社区在线、自动将 Bug 报告转为 GitHub Issue、追踪用户增长、数据异常时主动提醒分析。              </div>
             </div>
           
                                   <div class="flex flex-col col-span-3 p-6 rounded-lg lg:p-12 bg-gray-light">
-              <div class="tm-12">
-                We won every Award we ever participated in              </div>
+              <div class="mt-12 t-16">
+                电商店主：多语言客服、库存预警、竞品价格监控、ROI 驱动的广告优化</div>
 
               <div class="overflow-clip mask-x-from-90% mask-x-to-100% my-auto max-lg:pt-8">
                 <div class="flex select-none">
