@@ -169,7 +169,7 @@
     <div class="relative bg-white p-6" data-header="dark">
       <div class="relative text-black rounded-3xl overflow-hidden">
 
-      <video src="media/pages/home/ca07be12d8-1772639653/home视频-01.mp4" class="object-cover absolute inset-0 w-full h-full" autoplay muted loop playsinline></video>
+      <video src="media/pages/home/ca07be12d8-1772639653/home视频-01.mp4" class="object-cover absolute inset-0 w-full h-full" style="transform:scale(1.12);transform-origin:center center;" autoplay muted loop playsinline></video>
 
   <div class="flex relative flex-col pt-36 pb-8 min-h-lvh w-full">
     <div class="flex-1 flex flex-col items-center justify-center" style="margin-bottom: 40px">
@@ -214,7 +214,7 @@
       <div class="col-span-10 col-start-3">
         <div class="grid-cols-2 grid-rows-2 gap-2 lg:grid max-lg:space-y-4">
                     <div class="col-span-1 row-span-2 row-start-1 p-6 rounded-lg lg:p-12 bg-gray-light">
-            <img alt="" class="w-full object-cover aspect-square" height="914" loading="lazy" sizes="(min-width: 1024px) 600px, 100vw" src="media/pages/home/d8a080417b-1772639654/multi-agent-system.jpg" srcset="media/pages/home/d8a080417b-1772639654/multi-agent-system-200x-q95.webp 200w, media/pages/home/d8a080417b-1772639654/multi-agent-system-400x-q95.webp 400w, media/pages/home/d8a080417b-1772639654/multi-agent-system-800x-q95.webp 800w, media/pages/home/d8a080417b-1772639654/multi-agent-system-1200x-q95.webp 1200w, media/pages/home/d8a080417b-1772639654/multi-agent-system-2400x-q95.webp 2400w" width="978">
+            <img alt="" class="w-full object-cover aspect-square" style="border-radius:16px" loading="lazy" src="media/pages/home/d8a080417b-1772639654/new-image-1.png" width="978">
             <div class="mt-10 t-16 max-w-100">
               <strong>一键下载，零技术门槛。</strong>            </div>
             <div class="mt-4 t-16 whitespace-nowrap">
@@ -223,7 +223,7 @@
 
                     <div class="flex col-span-1 col-start-2 row-start-1 gap-8 p-6 rounded-lg lg:p-12 bg-gray-light">
             <div class="basis-4/10 self-stretch">
-              <img alt="" class="w-full h-full rounded object-cover" loading="lazy" sizes="(min-width: 1024px) 400px, 100vw" src="media/pages/home/b7905abe84-1772639652/1747398282829.jpeg" srcset="media/pages/home/b7905abe84-1772639652/1747398282829-200x-q95.webp 200w, media/pages/home/b7905abe84-1772639652/1747398282829-400x-q95.webp 400w, media/pages/home/b7905abe84-1772639652/1747398282829-800x-q95.webp 800w, media/pages/home/b7905abe84-1772639652/1747398282829-1200x-q95.webp 1200w, media/pages/home/b7905abe84-1772639652/1747398282829-2400x-q95.webp 2400w" width="800">            </div>
+              <img alt="" class="w-full h-full object-cover" style="border-radius:16px" loading="lazy" src="media/pages/home/b7905abe84-1772639652/new-image-2.png" width="800">            </div>
 
             <div class="self-end basis-6/10">
               <blockquote class="t-16">
@@ -239,7 +239,7 @@
               <strong>24/7 主动监控，自动发现机会</strong>            </div>
 
             <div style="padding:32px 48px 48px;flex:1;display:flex;flex-direction:column;">
-              <img alt="" class="w-full object-cover rounded" style="flex:1;min-height:0;" loading="lazy" src="media/pages/home/5de3630f55-1772655982/screenshot-247.png" width="800">
+              <img alt="" class="w-full object-cover" style="height:208px;border-radius:16px" loading="lazy" src="media/pages/home/5de3630f55-1772655982/new-image-3.png" width="800">
             </div>
           </div>
         </div>
@@ -731,13 +731,19 @@
 
       window.addEventListener('wheel', function (e) {
         if (!isTunnelSticky()) return;
+        // 每次进入隧道时，用实际滚动位置校正 current，
+        // 避免反向进入时 current 与实际位置不一致
+        var step = getStep();
+        var scrolled = -tunnel.getBoundingClientRect().top;
+        var synced = Math.max(0, Math.min(TOTAL - 1, Math.floor(scrolled / step)));
+        if (synced !== current) { current = synced; setActive(current); }
         var dir  = e.deltaY > 0 ? 1 : -1;
         var next = current + dir;
         if (next < 0 || next >= TOTAL) return; // 边界：放行自然滚动
         e.preventDefault();
         if (busy) return;
         busy = true;
-        window.scrollBy(0, dir * getStep());
+        window.scrollBy(0, dir * step);
         setActive(next);
         setTimeout(function () { busy = false; }, 450);
       }, { passive: false });
